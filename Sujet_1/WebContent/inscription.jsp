@@ -8,6 +8,18 @@
 
 <div class="container">
 
+<% if (request.getSession().getAttribute("alert") != null) { %>
+
+	<div class="alert alert-warning alert-danger" role="alert">
+		<button type="button" class="close" data-dismiss="alert"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<strong>Warning!</strong> Better check yourself, you're not looking
+		too good.
+	</div>
+
+<% } %>
 
 	<form>
 		<div class="form-group">
@@ -28,10 +40,14 @@
 			<input type="radio" name="female" value="female">
 			Feminin
 		</label>
+		<label class="radio-inline">
+			<input type="radio" name="female" value="female">
+			Autre
+		</label>
 		
 		<div class="form-group">
 			<label for="email">Addresse Electrique</label> 
-			<input type="email" class="form-control" placeholder="Enter email">
+			<input type="email" class="form-control" placeholder="example@todomore.com">
 		</div>
 		<div class="form-group">
 			<label for="password">Mot de passe</label> 
@@ -41,7 +57,7 @@
 			<label for="password">Configuration du mot de passe</label> 
 			<input type="confi_password" class="form-control" placeholder="Password">
 		</div>
-		<button type="submit" class="btn btn-info pull-right">Inscription</button>
+		<button type="submit" class="btn btn-infoq pull-right">Inscription</button>
 	</form>
 
 
