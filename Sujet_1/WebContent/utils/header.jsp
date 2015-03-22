@@ -16,10 +16,12 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="<%= request.getContextPath()%>/index.jsp"><%= request.getParameter("title") %></a>
-    </div>
+	<div class="container-fluid">
+    	
+    	<div class="navbar-header">
+      		<a class="navbar-brand" href="<%= request.getContextPath()%>/index.jsp"><%= request.getParameter("title") %></a>
+    	</div>
+    
     <div>
     
     	<!-- When the user input the right email and password -->
@@ -51,27 +53,40 @@
 		
 		<!-- When the password or the email address is wrong -->
 		<% } else if (session.getAttribute("wrongPwd") != null){ %>
+	
 		<form class="navbar-form form-inline pull-right"  action="<%= request.getContextPath()%>/LoginServlet">
-			<label>Username or password invalid.</label>
-    		<input type="text" class="form-control" placeholder="john@example.com" name="email">
+
+			<div class="alert alert-danger alert-dismissible" role="alert">Wrong password!</div>
+			<input type="text" class="form-control" placeholder="john@example.com" name="email">
     		<input type="password" class="form-control" placeholder="Password" name="password">
-    		<button type="submit" class="btn">Log in</button>
-		</form>
-	<% } else {%>
-		<form class="navbar-form form-inline pull-right"  action="<%= request.getContextPath()%>/LoginServlet">
-    		<input type="text" class="form-control" placeholder="john@example.com" name="email">
-    		<input type="password" class="form-control" placeholder="Password" name="password">
-    		
     		<br/>
     		<div class="checkbox">
     			<label>
       				<input type="checkbox">Garder ma session active
     			</label>
   			</div>
-  			<span>&nbsp&nbsp&nbsp</span><a href="#">Inscription</a>
-    		<button type="submit" class="btn btn-default">Log in</button>
+  			<span>&nbsp&nbsp&nbsp</span><a href="inscription.jsp">Inscription</a>
+    		<button type="submit" class="btn btn-default">Sign in</button>
+    		
+ 		</form>
+	
+	<% } else {%>
+		
+		<form class="navbar-form form-inline pull-right"  action="<%= request.getContextPath()%>/LoginServlet">
+		
+    		<input type="text" class="form-control" placeholder="john@example.com" name="email">
+    		<input type="password" class="form-control" placeholder="Password" name="password">
+    		<br/>
+    		<div class="checkbox">
+    			<label>
+      				<input type="checkbox">Garder ma session active
+    			</label>
+  			</div>
+  			<span>&nbsp&nbsp&nbsp</span><a href="inscription.jsp">Inscription</a>
+    		<button type="submit" class="btn btn-default">Sign in</button>
     		
 		</form>
+	
 	<% } %>
 	
 	</div>	    

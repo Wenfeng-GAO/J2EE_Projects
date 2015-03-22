@@ -6,7 +6,7 @@ public class User implements Serializable {
 
 	private static final long serialVersionUID = -7351729135012380019L;
 	
-	private String email, password, nom, prenom;
+	private String email, password, nom, prenom, sex;
 
 	public User(String email) {
 		this.email = email;
@@ -44,6 +44,14 @@ public class User implements Serializable {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 	
 	

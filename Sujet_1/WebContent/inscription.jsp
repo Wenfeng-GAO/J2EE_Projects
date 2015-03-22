@@ -11,53 +11,54 @@
 <% if (request.getSession().getAttribute("alert") != null) { %>
 
 	<div class="alert alert-warning alert-danger" role="alert">
+	
 		<button type="button" class="close" data-dismiss="alert"
 			aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
-		<strong>Warning!</strong> Better check yourself, you're not looking
-		too good.
+		Les deux mots de passes ne concordent pas!
+		
 	</div>
 
 <% } %>
 
-	<form>
+	<form action="<%= request.getContextPath() %>/InscriptionServlet">
 		<div class="form-group">
 			<label for="nom">Nom</label>
-			<input type="text" class="form-control" placeholder="Dipont">
+			<input type="text" class="form-control" placeholder="Dipont" name="nom">
 		</div>
 		<div class="form-group">
 			<label for="prenom">Prenom</label>
-			<input type="text" class="form-control" placeholder="Jean">
+			<input type="text" class="form-control" placeholder="Jean" name="prenom">
 		</div>
 
 
 		<label class="radio-inline">
-			<input type="radio" name="male" value="male">
+			<input type="radio" name="sex" value="male">
 			Masculin
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="female" value="female">
+			<input type="radio" name="sex" value="female">
 			Feminin
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="female" value="female">
+			<input type="radio" name="sex" value="female">
 			Autre
 		</label>
 		
 		<div class="form-group">
 			<label for="email">Addresse Electrique</label> 
-			<input type="email" class="form-control" placeholder="example@todomore.com">
+			<input type="email" class="form-control" placeholder="example@todomore.com" name="email">
 		</div>
 		<div class="form-group">
 			<label for="password">Mot de passe</label> 
-			<input type="password" class="form-control" placeholder="Password">
+			<input type="password" class="form-control" placeholder="Password" name="password">
 		</div>
 		<div class="form-group">
 			<label for="password">Configuration du mot de passe</label> 
-			<input type="confi_password" class="form-control" placeholder="Password">
+			<input type="password" class="form-control" placeholder="Password" name="passwordconfi">
 		</div>
-		<button type="submit" class="btn btn-infoq pull-right">Inscription</button>
+		<button type="submit" class="btn btn-info pull-right">Inscription</button>
 	</form>
 
 

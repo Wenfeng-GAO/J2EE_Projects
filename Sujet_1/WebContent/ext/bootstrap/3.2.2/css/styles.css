@@ -12,3 +12,7 @@
 .text-margin {
 	margin-top: 10px;
 }
+
+body {
+	margin-bottom: 60px;
+}
