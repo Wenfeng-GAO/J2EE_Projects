@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.Category;
 import model.Owner;
 import model.Project;
+import model.db.CategoryDB;
 import model.db.ProjectDB;
-import model.db.exception.DatabaseAccessError;
 import model.exception.InvalidDataException;
 
 /**
@@ -58,7 +58,7 @@ public class NewProjectServlet extends HttpServlet {
 		
 		// Get Category from parameter
 		if (categoryPara != null) {
-			category = new Category(categoryPara);
+			category = CategoryDB.getCategory(categoryPara);
 		}
 		
 		// Transform budget to Double
@@ -80,6 +80,7 @@ public class NewProjectServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				fundingDuration = 0;
 			}
+		
 		}
 
 		// Create project object
@@ -90,8 +91,6 @@ public class NewProjectServlet extends HttpServlet {
 			resp.sendRedirect("my_projects.jsp");
 		} catch (InvalidDataException e) {
 			errorFormatFeedback(req, resp, e);
-		} catch (DatabaseAccessError e) {
-			errorFormatFeedback(req, resp, new DatabaseAccessError("Connection to database failed."));
 		}
 		
 	}

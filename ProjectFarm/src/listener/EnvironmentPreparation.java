@@ -34,12 +34,12 @@ public class EnvironmentPreparation implements ServletContextListener {
 
 			Statement stmt = con.createStatement();
 
-			stmt.executeUpdate("CREATE TABLE user "
-					+ "(id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY," 
-					+ "email VARCHAR(30),"
-					+ "username VARCHAR(30)," 
-					+ "password VARCHAR(30))"
-					);
+//			stmt.executeUpdate("CREATE TABLE user "
+//					+ "(id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY," 
+//					+ "email VARCHAR(30),"
+//					+ "username VARCHAR(30)," 
+//					+ "password VARCHAR(30))"
+//					);
 
 			con.close();
 

@@ -1,7 +1,11 @@
 package model.db;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.naming.NamingException;
 
 import model.Evaluator;
 import model.Owner;
@@ -10,49 +14,144 @@ import model.db.exception.DatabaseAccessError;
 
 public class UserDB {
 	
-	private static Map<String,User> users;
-	
-	static {
-		users = new LinkedHashMap<String, User>();
-		initializeUsersList();
-	}
+	public static boolean checkLogin(String login,String password) throws DatabaseAccessError, ClassNotFoundException, SQLException, NamingException{
 
-	private static void initializeUsersList() {
-		users.put("john@acme.com",new Owner("john@acme.com","John Silver","123"));
-		users.put("mary@acme.com",new Owner("mary@acme.com","Mary Moon","123"));
-		users.put("paul@acme.com",new Owner("paul@acme.com","Paul McDonalds","123"));
+		boolean isLogin = false;
 		
-		users.put("sarah@geek.com",new Evaluator("sarah@geek.com","Sarah Logan","456"));
-		users.put("thibault@geek.com",new Evaluator("thibault@geek.com","Thibault Moulin","456"));
-		users.put("george@geek.com",new Evaluator("george@geek.com","George Papalodeminus","456"));		
-	}
-	
-	public static boolean checkLogin(String login,String password) throws DatabaseAccessError{
-		User u = users.get(login);
-		if(u == null) 
-			return false;
-		return u.getPassword().equals(password);
-	}
-	
-	public static User getUser(String login) throws DatabaseAccessError {
-		User u = getOwner(login);
-		if(u == null) {
-			u = getEvaluator(login);
+		Connection con = DBUtils.getConnection();
+		Statement stmt = con.createStatement();
+		
+		String sql_owner = "SELECT owner_id FROM owner WHERE email='" + login + "' AND password='" + password + "'";
+		ResultSet rs = stmt.executeQuery(sql_owner);
+		while (rs.next()) {
+			if (rs.getInt("owner_id") > 0) 
+				isLogin = true;
 		}
-		return u;
+		
+		String sql_evaluator = "SELECT evaluator_id FROM evaluator WHERE email='" + login + "' AND password='" + password + "'";
+		rs = stmt.executeQuery(sql_evaluator);
+		while (rs.next()) {
+			if (rs.getInt("evaluator_id") > 0)
+				isLogin = true;
+		}
+		
+		con.close();
+		return isLogin;
 	}
 	
-	public static Owner getOwner(String login) throws DatabaseAccessError{
-		User u = users.get(login);
-		if(u == null || !(u instanceof Owner))
-			return null;
-		return (Owner) u;
+	public static User getUser(String login) {
+
+		User user = null;
+		Connection con = null;
+		Statement stmt = null;
+		try {
+			con = DBUtils.getConnection();
+			stmt = con.createStatement();
+			String sql_owner = "SELECT * FROM owner WHERE email='" + login + "'";
+			ResultSet rs = stmt.executeQuery(sql_owner);
+			while (rs.next()) {
+				if (rs.getInt("owner_id") > 0) {
+					// Retrieve by column name
+					String name = rs.getString("username");
+					String email = rs.getString("email");
+					String password = rs.getString("password");
+					int id = rs.getInt("owner_id");
+					user = new Owner(email, name, password, id);
+				}
+			}
+			String sql_evaluator = "SELECT * FROM evaluator WHERE email='" + login + "'";
+			rs = stmt.executeQuery(sql_evaluator);
+			while (rs.next()) {
+				if (rs.getInt("evaluator_id") > 0) {
+					// Retrieve by column name
+					String name = rs.getString("username");
+					String email = rs.getString("email");
+					String password = rs.getString("password");
+					int id = rs.getInt("evaluator_id");
+					user = new Evaluator(email, name, password, id);
+
+				}
+			}
+		} catch (ClassNotFoundException | SQLException | NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return user;
+		
 	}
 	
-	public static Evaluator getEvaluator(String login) throws DatabaseAccessError {
-		User u = users.get(login);
-		if(u == null || !(u instanceof Evaluator))
-			return null;
-		return (Evaluator) u;		
+	
+	public static Owner getOwner(int owner_id) {
+		
+		Owner owner = null;
+		Connection con = null;
+		Statement stmt = null;
+		
+		try {
+			con = DBUtils.getConnection();
+			stmt = con.createStatement();
+			String sql_owner = "SELECT * FROM owner WHERE owner_id=" + owner_id;
+			ResultSet rs = stmt.executeQuery(sql_owner);
+			while (rs.next()) {
+				// Retrieve by column name
+				String name = rs.getString("username");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				int id = rs.getInt("owner_id");
+				owner = new Owner(email, name, password, id);
+			}
+		} catch (ClassNotFoundException | SQLException | NamingException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return owner;
 	}
+	
+	
+	public static Evaluator getEvaluator(int evaluator_id) {
+		
+		Evaluator evaluator = null;
+		Connection con = null;
+		Statement stmt = null;
+		
+		try {
+			con = DBUtils.getConnection();
+			stmt = con.createStatement();
+			String sql_evaluator = "SELECT * FROM evaluator WHERE evaluator_id=" + evaluator_id;
+			ResultSet rs = stmt.executeQuery(sql_evaluator);
+			while (rs.next()) {
+				// Retrieve by column name
+				String name = rs.getString("username");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				int id = rs.getInt("evaluator_id");
+				evaluator = new Evaluator(email, name, password, id);
+			}
+		} catch (ClassNotFoundException | SQLException | NamingException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return evaluator;
+	}
+	
 }

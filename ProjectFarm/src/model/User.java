@@ -8,13 +8,14 @@ public abstract class User implements Serializable {
 
 	private String email;
 	private String name;
-
 	private String password;
+	private int id;
 
-	public User(String email, String name, String password) {
+	public User(String email, String name, String password, int id) {
 		setEmail(email);
 		setName(name);
 		setPassword(password);
+		setId(id);
 	}
 
 	public String getEmail() {
@@ -39,6 +40,14 @@ public abstract class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override

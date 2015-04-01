@@ -12,7 +12,6 @@ import model.Evaluation;
 import model.Evaluator;
 import model.Project;
 import model.db.ProjectDB;
-import model.db.exception.DatabaseAccessError;
 import model.exception.InvalidDataException;
 
 @WebServlet("/EvaluationServlet")
@@ -42,8 +41,7 @@ public class EvaluationServlet extends HttpServlet {
 	
 		try {
 			project = ProjectDB.getProject(req.getParameter("project"));
-		} catch (DatabaseAccessError e1) {
-			// TODO Auto-generated catch block
+		} catch (InvalidDataException e1) {
 			e1.printStackTrace();
 		}
 		
@@ -56,7 +54,6 @@ public class EvaluationServlet extends HttpServlet {
 			project.addEvaluation(evaluation);
 			
 		} catch (InvalidDataException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

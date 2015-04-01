@@ -12,13 +12,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"
 		href="/ProjectFarm/ext/bootstrap/3.2.2/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="/ProjectFarm/ext/bootstrap/3.2.2/css/styles.css">
 </head>
 
 
 
 <body>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
     	
     	<div class="navbar-header">

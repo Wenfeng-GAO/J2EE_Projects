@@ -12,7 +12,7 @@
 
 	<div class="jumbotron">
 		<h1>Project ideas are seeds to change the world</h1>     
-		<button type="button" class="btn btn-default">Learn more</button>
+		<button type="button" class="btn btn-info">Learn more</button>
 	</div>
 
 </div>

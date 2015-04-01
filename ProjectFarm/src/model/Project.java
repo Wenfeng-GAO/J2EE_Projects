@@ -2,9 +2,10 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
+import model.db.DocumentDB;
+import model.db.EvaluationDB;
 import model.exception.InvalidDataException;
 
 public class Project implements Serializable {
@@ -18,8 +19,7 @@ public class Project implements Serializable {
 	private Date created;
 	private Owner owner;
 	private Category category;
-	private List<Evaluation> evaluations;
-	private List<Document> documents;
+	private int id;
 
 	public Project(String acronym, String description, int fundingDuration,
 			double budget, Owner owner, Category category) throws InvalidDataException {
@@ -30,17 +30,16 @@ public class Project implements Serializable {
 		setCreated(new Date());
 		setOwner(owner);
 		setCategory(category);
-		setEvaluations(new LinkedList<>());
-		setDocuments(new LinkedList<>());
 	}
 	
 
 	
 	public double getAttractiveness() {
+		List<Evaluation> evaluations = getEvaluations();
 		double attractiveness = 0;
-		int n = this.evaluations.size();
+		int n = evaluations.size();
 		if (n > 0) {
-			for (Evaluation e : this.evaluations) {
+			for (Evaluation e : evaluations) {
 				attractiveness += e.getAttractiveness();
 			}
 			attractiveness /= n;
@@ -50,10 +49,11 @@ public class Project implements Serializable {
 	}
 	
 	public double getRisk() {
+		List<Evaluation> evaluations = getEvaluations();
 		double risk = 0;
-		int n = this.evaluations.size();
+		int n = evaluations.size();
 		if (n > 0) {
-			for (Evaluation e : this.evaluations) {
+			for (Evaluation e : evaluations) {
 				risk += e.getRiskLevel();
 			}
 			risk /= n;
@@ -62,16 +62,15 @@ public class Project implements Serializable {
 	}
 	
 
-	
-	
 
-	public void setDocuments(List<Document> documents) {
-		this.documents = documents;
+	public int getId() {
+		return id;
 	}
 
-	private void setEvaluations(List<Evaluation> evaluations) {
-		this.evaluations = evaluations;
+	public void setId(int id) {
+		this.id = id;
 	}
+
 
 	public String getAcronym() {
 		return acronym;
@@ -148,19 +147,32 @@ public class Project implements Serializable {
 	}
 
 	public void addEvaluation(Evaluation eval) {
-		evaluations.add(eval);
 		eval.setProject(this);
+		EvaluationDB.saveEvaluation(eval);
 	}
 
 	public List<Evaluation> getEvaluations() {
+		List<Evaluation> evaluations = null;
+		try {
+			evaluations = EvaluationDB.getEvaluationsOfProject(this);
+		} catch (InvalidDataException e) {
+			e.printStackTrace();
+		}
 		return evaluations;
 	}
 	
 	public void addDocument(Document doc) {
-		documents.add(doc);
+		doc.setProject(this);
+		DocumentDB.saveDocument(doc);
 	}
 	
 	public List<Document> getDocuments() {
+		List<Document> documents = null;
+		try {
+			documents = DocumentDB.getDocumentsOfProject(this);
+		} catch (InvalidDataException e) {
+			e.printStackTrace();
+		}
 		return documents;
 	}
 	

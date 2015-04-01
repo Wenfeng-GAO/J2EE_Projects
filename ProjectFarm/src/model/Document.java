@@ -12,6 +12,7 @@ public class Document implements Serializable {
 	
 	private String documentPath;
 	private Date added;
+	private Project project;
 	
 	public String docName() {
 		String docName = this.documentPath.split("//", 2)[1].toString().split("/", 2)[1].toString();
@@ -39,6 +40,14 @@ public class Document implements Serializable {
 		}
 		
 		this.documentPath = documentPath;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
 	}
 
 	public Date getAdded() {
