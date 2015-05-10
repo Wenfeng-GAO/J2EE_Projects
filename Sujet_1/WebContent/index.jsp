@@ -3,7 +3,6 @@
     
 <jsp:include page="/utils/header.jsp">
 	<jsp:param value="TO DO MORE SOCIAL NETWORKING" name="title"/> 
-	<jsp:param value="index.jsp" name="page"/>
 </jsp:include>
 
 
