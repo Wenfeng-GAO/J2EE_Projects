@@ -14,7 +14,7 @@ if (request.getSession().getAttribute(SessionAttributes.COMPLETER_SUCCESS_INFO) 
 
 <div class="panel panel-warning">
   		<div class="panel-heading text-center">
-    		<h3 class="panel-title">Completer mon profile</h3>
+    		<h3 class="panel-title">Completer mon profil</h3>
   		</div>
   		<div class="panel-body">
 				<form action="ChangeProfileServlet">
@@ -43,8 +43,8 @@ if (request.getSession().getAttribute(SessionAttributes.COMPLETER_SUCCESS_INFO) 
 						<input type="password" class="form-control" name="conf_password" placeholder="Confirmation du mot de passe">
 					</div>
 					<div class="form-group">
-						<label for="bibliographie" class="sr-only">Bibliographie</label> 
-						<textarea rows="3" cols="" class="form-control" placeholder="Bibliographie..." name="biographie"></textarea>
+						<label for="bibliographie" class="sr-only">Biographie</label> 
+						<textarea rows="3" cols="" class="form-control" placeholder="Biographie..." name="biographie"></textarea>
 					</div>
 					<button type="submit" class="btn btn-primary pull-right">Valider</button>
 			<% 

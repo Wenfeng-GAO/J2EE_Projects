@@ -3,7 +3,7 @@
 
 <div class="panel panel-warning">
  		<div class="panel-heading text-center">
-   		<h3 class="panel-title">Mon profile</h3>
+   		<h3 class="panel-title">Mon profil</h3>
  		</div>
  		<div class="panel-body">
  			<div class="row">
@@ -22,10 +22,10 @@
 					<blockquote>
 						<strong>Qui est <%= user.getNom() %> ?</strong>
 						
-						<% if (!user.getBiographie().equals("")) { %>		
+						<% if (user.getBiographie() != null && !user.getBiographie().equals("")) { %>		
 								<small><%= user.getBiographie() %></small>
 						<% } else { %>
-								<small>Aucunne description pour le moment...</small>
+								<small>Aucune description pour le moment...</small>
 						<% } %>
 					</blockquote>
 				<%

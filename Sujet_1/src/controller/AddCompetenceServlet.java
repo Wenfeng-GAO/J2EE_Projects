@@ -43,7 +43,7 @@ public class AddCompetenceServlet extends HttpServlet {
 			try {
 				if (new CompetenceDB().addForce(competence)) {
 					user.getCompetences().add(competence);
-					req.getSession().setAttribute(SessionAttributes.PASSION_SUCCESS_INFO, "Félicitqtion nouvel compétence a été bien créé!");
+					req.getSession().setAttribute(SessionAttributes.PASSION_SUCCESS_INFO, "Félicitations nouvelle compétence a été bien créée!");
 				}
 			} catch (DatabaseAccessError e) {
 				e.printStackTrace();

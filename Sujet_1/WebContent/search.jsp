@@ -13,7 +13,7 @@
 <!-- Searching result page context -->
 <div class="container">
 	<div>
-		<h1>Resultat de recherches</h1>
+		<h1>Resultat des recherches</h1>
 	</div>
 	<div>
 		<table class="table table-hover">
@@ -32,7 +32,7 @@
 					for (User user : users) { %>
 						
 						<tr onclick="location.href='SearchResultProfileServlet?email=<%= user.getEmail() %>'">
-							<td><img alt="photo" src="http://placehold.it/80x80" class="img-circle"></td>
+							<td><img alt="..." src="http://placehold.it/140x140" class="img-circle"></td>
 							<td><%= user.getNom() %> <%= user.getPrenom() %></td>
 							<td><%= user.getEmail() %></td>
 						</tr>

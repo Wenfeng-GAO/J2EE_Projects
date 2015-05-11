@@ -42,7 +42,7 @@ public class AddPassionServlet extends HttpServlet {
 			try {
 				if (new PassionDB().addForce(passion)) {
 					user.getPassions().add(passion);
-					req.getSession().setAttribute(SessionAttributes.PASSION_SUCCESS_INFO, "Félicitqtion nouvelle passion a été bien créé!");
+					req.getSession().setAttribute(SessionAttributes.PASSION_SUCCESS_INFO, "Félicitations nouvelle passion a été bien créée!");
 				}
 			} catch (DatabaseAccessError e) {
 				e.printStackTrace();

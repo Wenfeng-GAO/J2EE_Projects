@@ -17,9 +17,8 @@
 		</div>
 		
 		<div class="col-md-6 jumbotron">
-			<p>Le site devra être accessible à partir de n’importe quelle machine de l’Esigelec et depuis n’importe quel navigateur web.
-				Le site devra être développé en java JEE avec l’utilisation de HTML 5 et de CSS 3. 
-				Il devra s'exécuter sur un serveur tomcat 7 (au mieux tomcat 8) et la base de données sera géré via un serveur mysql sous wamp.
+			<p>Ce site est un reseau social d'entreprise. Il permet a un membre de 
+			l'entreprise d'en retrouver un autre sur la base de son nom, de ses competences, de ses passions...
 			</p>
 		</div>
 	

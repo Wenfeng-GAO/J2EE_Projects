@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <jsp:include page="/utils/header.jsp">
-	<jsp:param value="MON PROFILE" name="title"/> 
+	<jsp:param value="MON PROFIL" name="title"/> 
 </jsp:include>
 
 

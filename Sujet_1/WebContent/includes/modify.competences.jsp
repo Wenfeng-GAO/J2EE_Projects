@@ -74,7 +74,7 @@ if (request.getSession().getAttribute(SessionAttributes.COMPETENCE_SUCCESS_INFO)
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Nouvel compétence</h4>
+				<h4 class="modal-title" id="myModalLabel">Nouvelle compétence</h4>
 			</div>
 			<form action="AddCompetenceServlet">
 				<div class="modal-body">

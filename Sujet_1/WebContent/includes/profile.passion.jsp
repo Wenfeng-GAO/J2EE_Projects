@@ -18,7 +18,7 @@
 			  		<%
 		  		if (request.getSession().getAttribute(SessionAttributes.LOGIN_VALID) != null) {
 		  		
-			  		User user = (User) request.getSession().getAttribute(SessionAttributes.LOGIN_VALID);
+			  		User user = (User) request.getSession().getAttribute(SessionAttributes.SEARCH_PROFILE);
 			  		
 			  		if (user.getPassions() != null && user.getPassions().size() > 0) { 
 			  		

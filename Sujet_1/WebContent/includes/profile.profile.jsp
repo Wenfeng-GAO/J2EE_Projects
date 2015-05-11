@@ -2,11 +2,11 @@
 <%@page import="model.User"%>
 <% 
 if (request.getSession().getAttribute(SessionAttributes.LOGIN_VALID) != null) {
-	User user = (User) request.getSession().getAttribute(SessionAttributes.LOGIN_VALID); 
+	User user = (User) request.getSession().getAttribute(SessionAttributes.SEARCH_PROFILE); 
 %>
 <div class="panel panel-warning">
  		<div class="panel-heading text-center">
-   		<h3 class="panel-title">Profile de <%= user.getNom() %></h3>
+   		<h3 class="panel-title">Profil de <%= user.getNom() %></h3>
  		</div>
  		<div class="panel-body">
  			<div class="row">
