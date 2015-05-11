@@ -133,8 +133,8 @@ public class UserDB implements UserDAO {
 		Connection con = DBUtil.getConnection();
 		
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM user WHERE " + element + " = ?");
-			stmt.setString(1, search);
+			PreparedStatement stmt = con.prepareStatement("SELECT * FROM user WHERE " + element + " LIKE ?");
+			stmt.setString(1, "%" + search + "%");
 			
 			ResultSet rs = stmt.executeQuery();
 			
@@ -164,9 +164,9 @@ public class UserDB implements UserDAO {
 		
 		try {
 			PreparedStatement stmt = con.prepareStatement("SELECT user.* FROM user INNER JOIN " 
-					+ force + " ON " + force + "." + "titre = ?" + " AND user.user_id = "
+					+ force + " ON " + force + "." + "titre LIKE ?" + " AND user.user_id = "
 					+ force + ".user_id");
-			stmt.setString(1, search);
+			stmt.setString(1, "%" + search + "%");
 			
 			ResultSet rs = stmt.executeQuery();
 			
