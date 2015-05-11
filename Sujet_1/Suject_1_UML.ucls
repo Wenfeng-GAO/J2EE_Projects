@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="controller.SearchServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/SearchServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="-24" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="model.Force" project="Sujet_1" file="/Sujet_1/src/model/Force.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="278" width="170" x="2675" y="501"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="controller.AddPassionServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/AddPassionServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="340" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="model.dao.UserDAO" project="Sujet_1" 
+    file="/Sujet_1/src/model/dao/UserDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="194" x="4749" y="819"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="model.db.CompetenceDB" project="Sujet_1" 
+    file="/Sujet_1/src/model/db/CompetenceDB.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="134" width="184" x="5055" y="501"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="controller.ModifyServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/ModifyServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="704" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="controller.RemovePassionServet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/RemovePassionServet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="1068" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="model.db.PassionDB" project="Sujet_1" file="/Sujet_1/src/model/db/PassionDB.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="134" width="184" x="5279" y="501"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="model.Competence" project="Sujet_1" file="/Sujet_1/src/model/Competence.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="98" width="187" x="2562" y="819"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="model.Description" project="Sujet_1" file="/Sujet_1/src/model/Description.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="206" width="170" x="1432" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="model.Passion" project="Sujet_1" file="/Sujet_1/src/model/Passion.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="98" width="161" x="2789" y="819"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="controller.LogoutServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/LogoutServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="1642" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="controller.SearchResultProfileServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/SearchResultProfileServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="2006" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="controller.SessionAttributes" project="Sujet_1" 
+    file="/Sujet_1/src/controller/SessionAttributes.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="278" width="265" x="2370" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="model.db.UserDB" project="Sujet_1" file="/Sujet_1/src/model/db/UserDB.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="206" width="266" x="4749" y="501"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="model.exception.InvalidLoginException" project="Sujet_1" 
+    file="/Sujet_1/src/model/exception/InvalidLoginException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="248" x="2998" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="model.db.DatabaseAccessError" project="Sujet_1" 
+    file="/Sujet_1/src/model/db/DatabaseAccessError.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="246" x="3286" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="controller.RemoveCompetenceServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/RemoveCompetenceServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="3572" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="19" language="java" name="model.dao.ForceDAO" project="Sujet_1" 
+    file="/Sujet_1/src/model/dao/ForceDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="184" x="5503" y="501"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="model.db.DBUtil" project="Sujet_1" file="/Sujet_1/src/model/db/DBUtil.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="206" width="211" x="3936" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="model.User" project="Sujet_1" file="/Sujet_1/src/model/User.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="548" width="283" x="2675" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="controller.AddCompetenceServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/AddCompetenceServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="4187" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="controller.ChangeProfileServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/ChangeProfileServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="4551" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="controller.LoginServlet" project="Sujet_1" 
+    file="/Sujet_1/src/controller/LoginServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="324" x="4915" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="model.db.ForceDB" project="Sujet_1" file="/Sujet_1/src/model/db/ForceDB.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="134" width="184" x="5279" y="-87"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="26">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="28">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="29" name="userDB"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="32" name="passions"/>      
+      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="37">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="38" name="competences"/>      
+      <multiplicity id="39" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="40">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
