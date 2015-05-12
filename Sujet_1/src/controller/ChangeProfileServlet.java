@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import model.User;
 import model.db.DatabaseAccessError;
 import model.db.UserDB;
@@ -29,6 +31,14 @@ public class ChangeProfileServlet extends HttpServlet {
 		String password = req.getParameter("password");
 		String confPassword = req.getParameter("conf_password");
 		String biographie = req.getParameter("biographie");
+		
+		nom = StringEscapeUtils.escapeHtml3(nom);
+		prenom = StringEscapeUtils.escapeHtml3(prenom);
+		email = StringEscapeUtils.escapeHtml3(email);
+		poste = StringEscapeUtils.escapeHtml3(poste);
+		password = StringEscapeUtils.escapeHtml3(password);
+		confPassword = StringEscapeUtils.escapeHtml3(confPassword);
+		biographie = StringEscapeUtils.escapeHtml3(biographie);
 		
 		// Get user
 		if (req.getSession().getAttribute(SessionAttributes.LOGIN_VALID) == null) {

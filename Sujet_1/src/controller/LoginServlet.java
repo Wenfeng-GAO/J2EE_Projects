@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import model.db.DatabaseAccessError;
 import model.db.UserDB;
 import model.exception.InvalidLoginException;
@@ -29,6 +31,12 @@ public class LoginServlet extends HttpServlet {
 		// Get parameters
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
+		
+		email = StringEscapeUtils.escapeHtml4(email);
+		password = StringEscapeUtils.escapeHtml4(password);
+		
+		System.out.println(email);
+		System.out.println(password);
 		
 		try {
 			if (userDB.isValidUser(email, password)) {

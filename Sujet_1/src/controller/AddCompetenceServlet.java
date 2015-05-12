@@ -14,6 +14,8 @@ import model.User;
 import model.db.CompetenceDB;
 import model.db.DatabaseAccessError;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 @WebServlet("/AddCompetenceServlet")
 public class AddCompetenceServlet extends HttpServlet {
 	
@@ -26,6 +28,8 @@ public class AddCompetenceServlet extends HttpServlet {
 		// Get parameters
 		String titre = req.getParameter("titre");
 		String description = req.getParameter("description");
+		titre = StringEscapeUtils.escapeHtml3(titre);
+		description = StringEscapeUtils.escapeHtml3(description);
 		
 		// Get user
 		if (req.getSession().getAttribute(SessionAttributes.LOGIN_VALID) == null) {

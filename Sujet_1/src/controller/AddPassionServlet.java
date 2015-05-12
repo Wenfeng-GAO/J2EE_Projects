@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import model.Force;
 import model.Passion;
 import model.User;
@@ -25,6 +27,8 @@ public class AddPassionServlet extends HttpServlet {
 		// Get parameters
 		String titre = req.getParameter("titre");
 		String description = req.getParameter("description");
+		titre = StringEscapeUtils.escapeHtml3(titre);
+		description = StringEscapeUtils.escapeHtml3(description);
 		
 		// Get user
 		if (req.getSession().getAttribute(SessionAttributes.LOGIN_VALID) == null) {

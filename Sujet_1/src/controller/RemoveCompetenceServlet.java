@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import model.Competence;
 import model.Force;
 import model.User;
@@ -26,6 +28,9 @@ public class RemoveCompetenceServlet extends HttpServlet {
 		// Get parameters
 		String titre = req.getParameter("title");
 		String description = req.getParameter("description");
+		
+		titre = StringEscapeUtils.escapeHtml3(titre);
+		description = StringEscapeUtils.escapeHtml3(description);
 		
 		// Get user
 		if (req.getSession().getAttribute(SessionAttributes.LOGIN_VALID) == null) {

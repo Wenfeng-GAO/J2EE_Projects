@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import model.User;
 import model.db.CompetenceDB;
 import model.db.DatabaseAccessError;
@@ -23,7 +25,10 @@ public class SearchResultProfileServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
+		// Get parameter
 		String email = req.getParameter("email");
+		email = StringEscapeUtils.escapeHtml3(email);
+		
 		User user = null;
 		
 		if (email != null && !email.equals("")) {

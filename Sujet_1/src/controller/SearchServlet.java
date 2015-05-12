@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import model.User;
 import model.db.DatabaseAccessError;
 import model.db.UserDB;
@@ -25,6 +27,7 @@ public class SearchServlet extends HttpServlet {
 		
 		// Get parameter
 		String search = req.getParameter("search");
+		search = StringEscapeUtils.escapeHtml3(search);
 		
 		List<User> users = new ArrayList<User>();
 		
