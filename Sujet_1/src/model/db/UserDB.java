@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import model.User;
@@ -133,7 +134,7 @@ public class UserDB implements UserDAO {
 		Connection con = DBUtil.getConnection();
 		
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT * FROM user WHERE " + element + " LIKE ?");
+			PreparedStatement stmt = con.prepareStatement("SELECT DISTINCT * FROM user WHERE " + element + " LIKE ?");
 			stmt.setString(1, "%" + search + "%");
 			
 			ResultSet rs = stmt.executeQuery();
@@ -163,7 +164,7 @@ public class UserDB implements UserDAO {
 		Connection con = DBUtil.getConnection();
 		
 		try {
-			PreparedStatement stmt = con.prepareStatement("SELECT user.* FROM user INNER JOIN " 
+			PreparedStatement stmt = con.prepareStatement("SELECT DISTINCT user.* FROM user INNER JOIN " 
 					+ force + " ON " + force + "." + "titre LIKE ?" + " AND user.user_id = "
 					+ force + ".user_id");
 			stmt.setString(1, "%" + search + "%");
@@ -190,17 +191,17 @@ public class UserDB implements UserDAO {
 	} 
 	
 	private List<User> combine(List<User>a, List<User>b) {
-		List<User> users = a;
+		
 		for (User userB : b) {
-			for (User userA : a) {
-				if (userB.getId() == userA.getId())
-					b.remove(userB);
+			for (Iterator<User> iterA = a.iterator(); iterA.hasNext(); ) {
+				User userA = iterA.next();
+				if (userB.getId() == userA.getId()) {
+					iterA.remove();
+				}
 			}
 		}
-		for (User userB : b) {
-			users.add(userB);
-		}
-		return users;
+		b.addAll(a);
+		return b;
 	}
 
 

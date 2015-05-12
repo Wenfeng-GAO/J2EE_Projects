@@ -22,7 +22,7 @@ if (request.getSession().getAttribute(SessionAttributes.LOGIN_VALID) != null) {
 					<blockquote>
 						<strong>Qui est <%= user.getNom() %> ?</strong>
 						
-						<% if (!user.getBiographie().equals("")) { %>		
+						<% if (user.getBiographie() != null && !user.getBiographie().equals("")) { %>		
 								<small><%= user.getBiographie() %></small>
 						<% } else { %>
 								<small>Aucunne description pour le moment...</small>
