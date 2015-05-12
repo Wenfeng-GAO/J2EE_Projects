@@ -101,6 +101,18 @@ public class User implements Serializable {
 	public void setPassions(List<Force> passions) {
 		this.passions = passions;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		User user = (User) obj;
+		return user.getId() == this.id
+				|| user.getNom().equals(this.nom)
+				&& user.getPrenom().equals(this.prenom)
+				&& user.getEmail().equals(this.email)
+				&& user.getPassword().equals(this.password)
+				&& user.getBiographie().equals(this.biographie);
+	}
+	
 	
 
 }

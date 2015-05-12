@@ -16,7 +16,7 @@ import model.db.PassionDB;
 @WebServlet("/ModifyServlet")
 public class ModifyServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1637001860372050917L;
+	private static final long serialVersionUID = 1173312949494949584L;
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)

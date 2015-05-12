@@ -25,7 +25,7 @@ if (request.getSession().getAttribute(SessionAttributes.LOGIN_VALID) != null) {
 						<% if (user.getBiographie() != null && !user.getBiographie().equals("")) { %>		
 								<small><%= user.getBiographie() %></small>
 						<% } else { %>
-								<small>Aucunne description pour le moment...</small>
+								<small>Aucune description pour le moment...</small>
 						<% } %>
 					</blockquote>
 				<%

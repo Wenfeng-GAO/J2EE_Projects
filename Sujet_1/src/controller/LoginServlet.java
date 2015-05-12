@@ -23,6 +23,9 @@ public class LoginServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
+		// Session timeout
+		req.getSession().setMaxInactiveInterval(240*60);
+		
 		// Get parameters
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
